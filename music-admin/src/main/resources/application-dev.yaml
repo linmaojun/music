@@ -1,0 +1,66 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      tracking-modes: cookie
+      cookie:
+        http-only: true
+        name: CA.access.Token.id
+      timeout: 30M
+      persistent: true
+    context-path: /
+  compression:
+    enabled: true
+spring:
+  jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.105.66.130:3306/test
+    username: root
+    password: root
+  messages:
+    basename: i18n.Message
+  freemarker:
+    request-context-attribute: ctx
+  cache:
+    type: simple
+logging:
+  level:
+    com.eliansun.mapper: debug
+
+jasypt:
+    encryptor:
+        password: xf0j1k8dyC6bhYol
+
+sys:
+  permitAll:
+    - "/static/**"
+    - "/login/auth"
+  message: i18n.Message
+pagehelper:
+  helper-dialect: sqlserver
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+wenxin:
+  appid: wxa6ceffe407065f95
+  secret: 58e9bf9028727c5aeb63bcb4c5670b77
+  token: linmaojun
+
+
+
+
+
+
+
+
+
+
